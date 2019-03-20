@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<?xml-stylesheet href="cajaPuerto.xsl" type="text/xsl"?>
+
+<cajaPuerto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="cajaPuerto.xsd">
+
+    <sucursal codigo_suc="F5732">
+        <clientes>
+            <cliente NIF="81423840-V">
+                <nombre>
+                    <nombre>Ernesto</nombre>
+                    <apellido>Marianello</apellido>
+                    <apellido>Pausini</apellido>
+                </nombre>
+                <dni>81423840-V</dni>
+                <direccion>
+                    <calle>Calle Virgen de la Cueva</calle>
+                    <puerta>1-E</puerta>
+                    <codigo_postal>63134</codigo_postal>
+                    <ciudad>Setenil de las bodegas</ciudad>
+                    <pais>España</pais>
+                </direccion>
+                <telefono>956813415</telefono>
+                <telefono>+34698125101</telefono>
+            </cliente>
+            
+            <cliente NIF="62363007-A">
+                <nombre>
+                    <nombre>Hermenegildo</nombre>
+                    <apellido>Matías</apellido>
+                    <apellido>Flores</apellido>
+                </nombre>
+                <dni>62363007-A</dni>
+                <direccion>
+                    <calle>Calle Maravilla 2</calle>
+                    <puerta>1-4</puerta>
+                    <codigo_postal>15263</codigo_postal>
+                    <ciudad>Algodonales</ciudad>
+                    <pais>España</pais>
+                </direccion>
+                <telefono>956653071</telefono>
+            </cliente>
+        </clientes>
+        
+        <cuentas>
+            <cuenta codigo="7839 1202 9103 0001">
+                <cod_cliente>81423840-V</cod_cliente>
+                <saldo>13004</saldo>
+                <privilegios>todos</privilegios>
+            </cuenta>
+            
+            <cuenta codigo="7839 1202 9103 0002">
+                <cod_cliente>81423840-V</cod_cliente>
+                <saldo>1170</saldo>
+                <privilegios>inmediato</privilegios>
+            </cuenta>
+        </cuentas>
+        
+        <prestamos>
+            <prestamo>
+                <NIFcliente>62363007-A</NIFcliente>
+                <cantidad>46000</cantidad>
+                <plazo_pago numero="1" plazo="anios"/>
+                <comision>1.2</comision>
+            </prestamo>
+            <prestamo>
+                <NIFcliente>62363007-A</NIFcliente>
+                <cantidad>10000</cantidad>
+                <plazo_pago numero="18" plazo="meses"/>
+                <comision>0.8</comision>
+            </prestamo>
+        </prestamos>
+    </sucursal>
+    
+    <sucursal codigo_suc="A0934">
+        <clientes>
+            <cliente NIF="94382412-A">
+                <nombre>
+                    <nombre>Eustiquio</nombre>
+                    <apellido>Perez</apellido>
+                    <apellido>Migraña</apellido>
+                </nombre>
+                <dni>94382412-A</dni>
+                <direccion>
+                    <calle>Calle Libertad 4</calle>
+                    <puerta>G</puerta>
+                    <codigo_postal>94141</codigo_postal>
+                    <ciudad>Cádiz</ciudad>
+                    <pais>España</pais>
+                </direccion>
+                <telefono>956768513</telefono>
+                <telefono>+45568431001</telefono>
+            </cliente>
+            
+            <cliente NIF="87501261-K">
+                <nombre>
+                    <nombre>Frasco</nombre>
+                    <apellido>Hermijo</apellido>
+                    <apellido>Guzman</apellido>
+                </nombre>
+                <dni>87501261-K</dni>
+                <direccion>
+                    <calle>Calle Delicias</calle>
+                    <puerta>2-F</puerta>
+                    <codigo_postal>11956</codigo_postal>
+                    <ciudad>El Puerto de Santa María</ciudad>
+                    <pais>España</pais>
+                </direccion>
+                <telefono>683181148</telefono>
+            </cliente>
+        </clientes>
+        
+        <cuentas>
+            <cuenta codigo="7837 1202 9106 0001">
+                <cod_cliente>94382412-A</cod_cliente>
+                <saldo>63821</saldo>
+                <privilegios>ninguno</privilegios>
+            </cuenta>
+            
+            <cuenta codigo="7837 1202 9106 0002">
+                <cod_cliente>87501261-K</cod_cliente>
+                <saldo>9431</saldo>
+                <privilegios>todos</privilegios>
+            </cuenta>
+        </cuentas>
+        
+        <prestamos>
+            <prestamo>
+                <NIFcliente>94382412-A</NIFcliente>
+                <cantidad>1000</cantidad>
+                <plazo_pago numero="20" plazo="dias"/>
+                <comision>0.5</comision>
+            </prestamo>
+            <prestamo>
+                <NIFcliente>87501261-K</NIFcliente>
+                <cantidad>3300</cantidad>
+                <plazo_pago numero="3" plazo="meses"/>
+                <comision>0</comision>
+            </prestamo>
+        </prestamos>
+    </sucursal>
+    
+</cajaPuerto>
+

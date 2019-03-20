@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="unqualified">
+    
+    <xs:complexType name="prestamo">
+        <xs:sequence>
+            <xs:element name="NIFcliente">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{8}\-[A-Z]{1}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="cantidad" type="xs:int"/>
+            <xs:element name="plazo_pago">
+                <xs:complexType>
+                    <xs:attribute name="numero" type="xs:int"/>
+                    <xs:attribute name="plazo">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="dias"/>
+                                <xs:enumeration value="meses"/>
+                                <xs:enumeration value="anios"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="comision" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

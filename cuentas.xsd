@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:complexType name="cuentas">
+        <xs:sequence>
+            <xs:element name="cod_cliente">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{8}\-[A-Z]{1}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="saldo" type="xs:int"/>
+            <xs:element name="privilegios">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="inmediato"/>
+                        <xs:enumeration value="ninguno"/>
+                        <xs:enumeration value="todos"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        
+        <xs:attribute name="codigo" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="([0-9]{4} ){3}[0-9]{4}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+
+    </xs:complexType>
+
+</xs:schema>

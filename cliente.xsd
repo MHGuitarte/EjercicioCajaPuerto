@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:complexType name="cliente">
+        <xs:sequence>
+            <xs:element name="nombre" type="nombrecompleto"/>
+            <xs:element name="dni">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{8}\-[A-Z]{1}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="direccion" type="direccion"/>
+            <xs:element name="telefono" minOccurs="1" maxOccurs="3">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="(\+[0-9]{2})?[0-9]{9}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="NIF">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{8}\-[A-Z]{1}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="nombrecompleto">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="apellido" type="xs:string" minOccurs="1" maxOccurs="2"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="direccion">
+        <xs:sequence>
+            <xs:element name="calle" type="xs:string"/>
+            <xs:element name="puerta" type="xs:string"/>
+            <xs:element name="codigo_postal">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:totalDigits value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="pais" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

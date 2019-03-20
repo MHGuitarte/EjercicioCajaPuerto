@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:include schemaLocation="prestamo.xsd" />
+    <xs:include schemaLocation="cliente.xsd" />
+    <xs:include schemaLocation="cuentas.xsd" />
+    <xs:element name="cajaPuerto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sucursal" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="clientes">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cliente" type="cliente" minOccurs="1" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <xs:key name="kNIF">
+                                    <xs:selector xpath="cliente" />
+                                    <xs:field xpath="@NIF" />
+                                </xs:key>
+                                <xs:unique name="uDNI">
+                                    <xs:selector xpath="cliente" />
+                                    <xs:field xpath="dni" />
+                                </xs:unique>
+                            </xs:element>
+                            <xs:element name="cuentas">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="cuenta" type="cuentas" minOccurs="1" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <xs:key name="kCODCue">
+                                    <xs:selector xpath="cuenta" />
+                                    <xs:field xpath="@codigo" />
+                                </xs:key>
+                            </xs:element>
+                            <xs:element name="prestamos">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="prestamo" type="prestamo" minOccurs="0" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="codigo_suc">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="[A-Z]{1}[0-9]{4}" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="kCodSuc">
+            <xs:selector xpath="sucursal" />
+            <xs:field xpath="@codigo_suc" />
+        </xs:key>
+    </xs:element>
+</xs:schema>

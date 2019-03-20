@@ -1,0 +1,76 @@
+body {
+    background-color: gainsboro;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 6em;
+    text-align: center;
+    background-color: darkslategrey;
+    color: white;
+}
+
+h2 {
+    text-decoration: overline red;
+    color: darkgreen;
+}
+
+hr {
+    color: blue;
+}
+
+h3 {
+    width: 10em;
+    background-color: aqua;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table,
+th,
+td {
+    border: 2px ridge gold;
+    text-align: center;
+}
+
+input {
+    border: 0px;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 1s;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+transition: all 1s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 2s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn:hover {
+    background-color: firebrick;
+    box-shadow: 0px 8px 16px 0px firebrick;
+    color: ghostwhite;
+}
